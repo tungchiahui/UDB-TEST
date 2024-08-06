@@ -31,7 +31,7 @@ class UDB
 			uint8_t buffer[UDB_TOTAL_SIZE + 3];
 		}data;
 
-		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_BOOL_NUM,int16_t int8_num = UDB_INT8_NUM,int16_t int16_num = UDB_INT16_NUM,int16_t int32_num = UDB_INT32_NUM,int16_t fp32_num = UDB_FP32_NUM);
+		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_BOOL_NUM,int16_t int8_num = UDB_INT8_NUM,int16_t int16_num = UDB_INT16_NUM,int16_t int32_num = UDB_INT32_NUM,int16_t fp32_num = UDB_FP32_NUM,int16_t total_size = UDB_TOTAL_SIZE);
 
 	}rx;
 
