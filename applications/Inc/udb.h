@@ -32,13 +32,8 @@ class UDB
 		}data;
 
 		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_BOOL_NUM,int16_t int8_num = UDB_INT8_NUM,int16_t int16_num = UDB_INT16_NUM,int16_t int32_num = UDB_INT32_NUM,int16_t fp32_num = UDB_FP32_NUM);
-		
-		RX(UDB& udb) : udb_ref(udb) {}
 
-		private:
-        UDB& udb_ref;
-	};
-	RX rx;
+	}rx;
 
 	class CHECKSUM
 	{
