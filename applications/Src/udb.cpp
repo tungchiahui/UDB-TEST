@@ -15,7 +15,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 }
 
 
-bool UDB::RX::Data_Analysis(uint8_t *msg_data,int16_t bool_num,int16_t int8_num,int16_t int16_num,int16_t int32_num,int16_t fp32_num)
+bool UDB::RX::Data_Analysis(uint8_t *msg_data,int16_t bool_num,int16_t int8_num,int16_t int16_num,int16_t int32_num,int16_t fp32_num,int16_t total_size)
 {
 	static uint8_t SUMCRC_FLAG;
 	static uint8_t buffer[7];
@@ -28,12 +28,12 @@ bool UDB::RX::Data_Analysis(uint8_t *msg_data,int16_t bool_num,int16_t int8_num,
 	if(finded_flag == 1)
 	{
 		buffer[rx_cnt++] = *msg_data;
-		if((rx_cnt == 7))
+		if((rx_cnt == (total_size+3)))
 		{
 			finded_flag = 0;
 			rx_cnt = 0;
-			SUMCRC_FLAG = udb_ref.checksum.__SUMCRC(buffer+1,4);
-			if((buffer[6] == 0x5A)&&(SUMCRC_FLAG == buffer[5]))
+			SUMCRC_FLAG = udb.checksum.__SUMCRC(buffer+1,total_size);
+			if((buffer[total_size+2] == 0x5A)&&(SUMCRC_FLAG == buffer[total_size+1]))
 			{
 				udp_rc.ch[0] = udb.convert.Bytes2Short(buffer[1],buffer[2]);
 				udp_rc.ch[1] = udb.convert.Bytes2Short(buffer[3],buffer[4]);
