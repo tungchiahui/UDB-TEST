@@ -3,7 +3,7 @@
 <title>Static Call Graph - [Template_Linux\Template_Linux.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image Template_Linux\Template_Linux.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Wed Aug  7 00:37:12 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6180002: Last Updated: Wed Aug  7 12:10:52 2024
 <BR><P>
 <H3>Maximum Stack Usage =        172 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -550,7 +550,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[54]"></a>HAL_UART_IRQHandler</STRONG> (Thumb, 1380 bytes, Stack size 24 bytes, stm32f1xx_hal_uart.o(.text.HAL_UART_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = HAL_UART_IRQHandler &rArr; UART_Receive_IT &rArr; HAL_UART_RxCpltCallback
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = HAL_UART_IRQHandler &rArr; HAL_DMA_Abort_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_RxEventCallback
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort_IT
@@ -584,10 +584,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Init
 </UL>
 
-<P><STRONG><a name="[66]"></a>HAL_UART_RxCpltCallback</STRONG> (Thumb, 124 bytes, Stack size 8 bytes, udb.o(.text.HAL_UART_RxCpltCallback))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_UART_RxCpltCallback
-</UL>
-<BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Receive_IT
+<P><STRONG><a name="[66]"></a>HAL_UART_RxCpltCallback</STRONG> (Thumb, 100 bytes, Stack size 0 bytes, udb.o(.text.HAL_UART_RxCpltCallback))
+<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Receive_IT
 </UL>
 
 <P><STRONG><a name="[56]"></a>HAL_UART_TxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f1xx_hal_uart.o(.text.HAL_UART_TxCpltCallback))
@@ -654,7 +652,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f103xb.o(.text)
 </UL>
 <P><STRONG><a name="[2f]"></a>USART1_IRQHandler</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f1xx_it.o(.text.USART1_IRQHandler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = USART1_IRQHandler &rArr; HAL_UART_IRQHandler &rArr; UART_Receive_IT &rArr; HAL_UART_RxCpltCallback
+<BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = USART1_IRQHandler &rArr; HAL_UART_IRQHandler &rArr; HAL_DMA_Abort_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_IRQHandler
 </UL>
@@ -684,7 +682,7 @@ Global Symbols
 Local Symbols
 </H3>
 <P><STRONG><a name="[55]"></a>UART_Receive_IT</STRONG> (Thumb, 254 bytes, Stack size 4 bytes, stm32f1xx_hal_uart.o(.text.UART_Receive_IT))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = UART_Receive_IT &rArr; HAL_UART_RxCpltCallback
+<BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = UART_Receive_IT
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_RxCpltCallback
 <LI><a href="#[58]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UARTEx_RxEventCallback

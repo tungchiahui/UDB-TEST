@@ -8,16 +8,16 @@ extern "C"
 
 #include "startup_main.h"
 
-#define UDB_BOOL_NUM 	0
-#define UDB_INT8_NUM 	0
-#define UDB_INT16_NUM 	0
-#define UDB_INT32_NUM 	0
-#define UDB_FP32_NUM 	0
-#define UDB_TOTAL_SIZE  (((UDB_BOOL_NUM + 7) / 8) + \
-                        (UDB_INT8_NUM * 1) + \
-                        (UDB_INT16_NUM * 2) + \
-                        (UDB_INT32_NUM * 4) + \
-                        (UDB_FP32_NUM * 4))
+#define UDB_RX_BOOL_NUM 	0
+#define UDB_RX_INT8_NUM 	0
+#define UDB_RX_INT16_NUM 	0
+#define UDB_RX_INT32_NUM 	0
+#define UDB_RX_FP32_NUM 	0
+#define UDB_RX_TOTAL_SIZE  (((UDB_RX_BOOL_NUM + 7) / 8) + \
+                        (UDB_RX_INT8_NUM * 1) + \
+                        (UDB_RX_INT16_NUM * 2) + \
+                        (UDB_RX_INT32_NUM * 4) + \
+                        (UDB_RX_FP32_NUM * 4))
 
 class UDB
 {
@@ -28,10 +28,10 @@ class UDB
 		class DATA
 		{
 			public:
-			uint8_t buffer[UDB_TOTAL_SIZE + 3];
+			uint8_t buffer[UDB_RX_TOTAL_SIZE + 3];
 		}data;
 
-		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_BOOL_NUM,int16_t int8_num = UDB_INT8_NUM,int16_t int16_num = UDB_INT16_NUM,int16_t int32_num = UDB_INT32_NUM,int16_t fp32_num = UDB_FP32_NUM,int16_t total_size = UDB_TOTAL_SIZE);
+		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_RX_BOOL_NUM,int16_t int8_num = UDB_RX_INT8_NUM,int16_t int16_num = UDB_RX_INT16_NUM,int16_t int32_num = UDB_RX_INT32_NUM,int16_t fp32_num = UDB_RX_FP32_NUM,int16_t total_size = UDB_RX_TOTAL_SIZE);
 
 	}rx;
 
