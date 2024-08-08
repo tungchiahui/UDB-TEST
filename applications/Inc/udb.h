@@ -8,6 +8,7 @@ extern "C"
 
 #include "startup_main.h"
 
+/*接收数据数量*/
 #define UDB_RX_BOOL_NUM 	0
 #define UDB_RX_INT8_NUM 	0
 #define UDB_RX_INT16_NUM 	0
@@ -18,6 +19,19 @@ extern "C"
                         (UDB_RX_INT16_NUM * 2) + \
                         (UDB_RX_INT32_NUM * 4) + \
                         (UDB_RX_FP32_NUM * 4))
+
+/*发送数据数量*/
+#define UDB_TX_BOOL_NUM     0
+#define UDB_TX_INT8_NUM      0
+#define UDB_TX_INT16_NUM     0
+#define UDB_TX_INT32_NUM     0
+#define UDB_TX_FP32_NUM      0
+#define UDB_TX_TOTAL_SIZE    (((UDB_TX_BOOL_NUM + 7) / 8) + \
+                            (UDB_TX_INT8_NUM * 1) + \
+                            (UDB_TX_INT16_NUM * 2) + \
+                            (UDB_TX_INT32_NUM * 4) + \
+                            (UDB_TX_FP32_NUM * 4))
+
 
 class UDB
 {
@@ -45,6 +59,8 @@ class UDB
 	{
 		public:
 		int16_t Bytes2Short(uint8_t DH,uint8_t DL);
+		int32_t Bytes2Int(uint8_t DH, uint8_t D2, uint8_t D3, uint8_t DL);
+		fp32 Bytes2Fp32(uint8_t DH, uint8_t D2, uint8_t D3, uint8_t DL);
 	}convert;
 
 }udb;

@@ -1,4 +1,5 @@
 #include "udb.h"
+#include <string.h> // For memcpy
 //USART_Debuger
 
 uint8_t rx_buffer[1];
@@ -63,8 +64,19 @@ int16_t UDB::CONVERT::Bytes2Short(uint8_t DH,uint8_t DL)
 	return result;
 }
 
+int32_t UDB::CONVERT::Bytes2Int(uint8_t DH, uint8_t D2, uint8_t D3, uint8_t DL)
+{
+    int32_t result = (int32_t)((int32_t)DH << 24 | (int32_t)D2 << 16 | (int32_t)D3 << 8 | DL);
+    return result;
+}
 
-
+fp32 UDB::CONVERT::Bytes2Fp32(uint8_t DH, uint8_t D2, uint8_t D3, uint8_t DL)
+{
+    uint8_t bytes[4] = {DL, D3, D2, DH};
+    fp32 result;
+    memcpy(&result, bytes, sizeof(result));
+    return result;
+}
 
 
 

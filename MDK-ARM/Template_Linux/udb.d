@@ -31,4 +31,6 @@ template_linux/udb.o: ..\applications\Src\udb.cpp \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_flash_ex.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
-  ..\bsp\boards\Inc\struct_typedef.h
+  ..\bsp\boards\Inc\struct_typedef.h \
+  D:\Program\ Files\ARM\ Keil\Keil_v5\ARM\ARMCLANG\Bin\..\include\libcxx\string.h \
+  D:\Program\ Files\ARM\ Keil\Keil_v5\ARM\ARMCLANG\Bin\..\include\string.h
