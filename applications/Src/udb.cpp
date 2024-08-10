@@ -1,10 +1,9 @@
 #include "udb.h"
+#include <cstdint>
 #include <string.h> // For memcpy
+
 //USART_Debuger
-
 uint8_t rx_buffer[1];
-
-Udp_rc_t udp_rc;
 
 extern "C"
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
@@ -14,6 +13,24 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		udb.rx.Data_Analysis(rx_buffer);
 	}
 }
+
+
+bool UDB::RX::Data_Apply(void)
+{
+/*  可使用的数据
+	this->data.bool_buffer[i];
+	this->data.int8_buffer[i];
+	this->data.int16_buffer[i];
+	this->data.int32_buffer[i];
+	this->data.fp32_buffer[i];
+*/
+
+	this->apply.rc.ch[0] = this->data.int16_buffer[0];
+	this->apply.rc.ch[1] = this->data.int16_buffer[1];
+
+	return true;
+}
+
 
 
 bool UDB::RX::Data_Analysis(uint8_t *msg_data,int16_t bool_num,int16_t int8_num,int16_t int16_num,int16_t int32_num,int16_t fp32_num,int16_t total_size)
@@ -36,9 +53,8 @@ bool UDB::RX::Data_Analysis(uint8_t *msg_data,int16_t bool_num,int16_t int8_num,
 			SUMCRC_FLAG = udb.checksum.__SUMCRC(buffer+1,total_size);
 			if((buffer[total_size+2] == 0x5A)&&(SUMCRC_FLAG == buffer[total_size+1]))
 			{
-				udp_rc.ch[0] = udb.convert.Bytes2Short(buffer[1],buffer[2]);
-				udp_rc.ch[1] = udb.convert.Bytes2Short(buffer[3],buffer[4]);
-				
+				this->Buffer_Sep();   //将数据分离
+				this->Data_Apply();   //给于数据实际意义
 				return true;
 			}
 		}
@@ -46,11 +62,64 @@ bool UDB::RX::Data_Analysis(uint8_t *msg_data,int16_t bool_num,int16_t int8_num,
 	return false;
 }
 
+bool UDB::RX::Buffer_Sep(void)
+{
+	// 假设 msg_data 指向接收到的数据缓冲区的起始位置。
+    uint8_t *ptr = this->data.buffer;
+
+	// 解析 bool
+    for (int i = 0; i < UDB_RX_BOOL_NUM; ++i) 
+	{
+        this->data.bool_buffer[i] = (*ptr & (1 << (i % 8))) != 0;
+        if (i % 8 == 7) 
+		{
+            ++ptr;  // 每8个布尔值后移动到下一个字节
+        }
+    }
+
+	// 解析 int8_t
+    for (int i = 0; i < UDB_RX_INT8_NUM; ++i) 
+	{
+        this->data.int8_buffer[i] = *reinterpret_cast<int8_t*>(ptr);
+        ptr += sizeof(int8_t);
+    }
+    
+    // 解析 int16_t
+    for (int i = 0; i < UDB_RX_INT16_NUM; ++i) 
+	{
+        uint8_t DH = *ptr++;
+        uint8_t DL = *ptr++;
+        this->data.int16_buffer[i] = udb.convert.Bytes2Short(DH, DL);
+    }
+    
+    // 解析 int32_t
+    for (int i = 0; i < UDB_RX_INT32_NUM; ++i) 
+	{
+        uint8_t DH = *ptr++;
+        uint8_t D2 = *ptr++;
+        uint8_t D3 = *ptr++;
+        uint8_t DL = *ptr++;
+        this->data.int32_buffer[i] = udb.convert.Bytes2Int(DH, D2, D3, DL);
+    }
+    
+    // 解析 fp32
+    for (int i = 0; i < UDB_RX_FP32_NUM; ++i) 
+	{
+        uint8_t DH = *ptr++;
+        uint8_t D2 = *ptr++;
+        uint8_t D3 = *ptr++;
+        uint8_t DL = *ptr++;
+        this->data.fp32_buffer[i] = udb.convert.Bytes2Fp32(DH, D2, D3, DL);
+    }
+
+	return true;
+}
+
 
 uint8_t UDB::CHECKSUM::__SUMCRC(uint8_t *puchMsg, uint16_t usDataLen)
 {
     int16_t i = 0;
-		uint8_t uchSUMCRC = 0x00;
+	uint8_t uchSUMCRC = 0x00;
     for (; i < usDataLen; i++)
     {
 			uchSUMCRC += puchMsg[i];

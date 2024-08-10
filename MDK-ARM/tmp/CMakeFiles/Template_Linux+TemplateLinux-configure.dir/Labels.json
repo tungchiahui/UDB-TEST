@@ -1,0 +1,34 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux-configure"
+		},
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux-configure.rule"
+		},
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-configure.rule"
+		},
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-patch.rule"
+		},
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-update.rule"
+		},
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-download.rule"
+		},
+		{
+			"file" : "C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-mkdir.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"Template_Linux+TemplateLinux"
+		],
+		"name" : "Template_Linux+TemplateLinux-configure"
+	}
+}

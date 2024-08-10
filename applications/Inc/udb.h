@@ -1,12 +1,15 @@
 #ifndef __UDB_H_
 #define __UDB_H_
 
+#include "stm32f103xb.h"
+#include <cstdint>
 #ifdef __cplusplus
 extern "C"
 {
 #endif
 
 #include "startup_main.h"
+
 
 /*接收数据数量*/
 #define UDB_RX_BOOL_NUM 	0
@@ -21,7 +24,7 @@ extern "C"
                         (UDB_RX_FP32_NUM * 4))
 
 /*发送数据数量*/
-#define UDB_TX_BOOL_NUM     0
+#define UDB_TX_BOOL_NUM      0
 #define UDB_TX_INT8_NUM      0
 #define UDB_TX_INT16_NUM     0
 #define UDB_TX_INT32_NUM     0
@@ -31,6 +34,12 @@ extern "C"
                             (UDB_TX_INT16_NUM * 2) + \
                             (UDB_TX_INT32_NUM * 4) + \
                             (UDB_TX_FP32_NUM * 4))
+
+
+typedef struct
+{
+	int16_t ch[2];
+}Udp_rc_t;
 
 
 class UDB
@@ -43,11 +52,41 @@ class UDB
 		{
 			public:
 			uint8_t buffer[UDB_RX_TOTAL_SIZE + 3];
+/****************************接受到的数据类型*******************************/
+			bool bool_buffer[UDB_RX_BOOL_NUM];
+			int8_t int8_buffer[UDB_RX_INT8_NUM];
+			int16_t int16_buffer[UDB_RX_INT16_NUM];
+			int32_t int32_buffer[UDB_RX_INT32_NUM];
+			fp32 fp32_buffer[UDB_RX_FP32_NUM];
 		}data;
 
-		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_RX_BOOL_NUM,int16_t int8_num = UDB_RX_INT8_NUM,int16_t int16_num = UDB_RX_INT16_NUM,int16_t int32_num = UDB_RX_INT32_NUM,int16_t fp32_num = UDB_RX_FP32_NUM,int16_t total_size = UDB_RX_TOTAL_SIZE);
+		class APPLY
+		{
+			public:
+			Udp_rc_t rc;
+		}apply;
 
+		bool Data_Analysis(uint8_t *msg_data,int16_t bool_num = UDB_RX_BOOL_NUM,int16_t int8_num = UDB_RX_INT8_NUM,int16_t int16_num = UDB_RX_INT16_NUM,int16_t int32_num = UDB_RX_INT32_NUM,int16_t fp32_num = UDB_RX_FP32_NUM,int16_t total_size = UDB_RX_TOTAL_SIZE);
+		bool Buffer_Sep(void);
+		bool Data_Apply(void);
 	}rx;
+
+	class TX
+	{
+		public:
+		class DATA
+		{
+			public:
+			uint8_t buffer[UDB_TX_TOTAL_SIZE + 3];
+/****************************准备发送的数据类型*******************************/
+			bool bool_buffer[UDB_TX_BOOL_NUM];
+			int8_t int8_buffer[UDB_TX_INT8_NUM];
+			int16_t int16_buffer[UDB_TX_INT16_NUM];
+			int32_t int32_buffer[UDB_TX_INT32_NUM];
+			fp32 fp32_buffer[UDB_TX_FP32_NUM];
+		}data;
+
+	}tx;
 
 	class CHECKSUM
 	{
@@ -65,11 +104,6 @@ class UDB
 
 }udb;
 
-
-typedef struct
-{
-	int16_t ch[2];
-}Udp_rc_t;
 
 
 #ifdef __cplusplus

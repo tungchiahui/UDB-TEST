@@ -1,0 +1,6 @@
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux.dir
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux-build.dir
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux-configure.dir
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux-database.dir
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/edit_cache.dir
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/rebuild_cache.dir

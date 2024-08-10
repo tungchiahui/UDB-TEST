@@ -5,6 +5,8 @@
  extern "C" {
 #endif
 
+#include <stdbool.h>
+
 typedef signed char int8_t;
 typedef signed short int int16_t;
 typedef signed int int32_t;

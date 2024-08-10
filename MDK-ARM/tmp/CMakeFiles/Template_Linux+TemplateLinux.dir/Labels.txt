@@ -1,0 +1,14 @@
+# Target labels
+ Template_Linux+TemplateLinux
+# Source files and their labels
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/CMakeFiles/Template_Linux+TemplateLinux-complete.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-build.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-configure.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-download.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-install.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-mkdir.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-patch.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-test.rule
+C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/Template_Linux+TemplateLinux/src/Template_Linux+TemplateLinux-stamp/Template_Linux+TemplateLinux-update.rule
