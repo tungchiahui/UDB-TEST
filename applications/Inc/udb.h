@@ -14,7 +14,7 @@ extern "C"
 /*接收数据数量*/
 #define UDB_RX_BOOL_NUM 	0
 #define UDB_RX_INT8_NUM 	0
-#define UDB_RX_INT16_NUM 	0
+#define UDB_RX_INT16_NUM 	2
 #define UDB_RX_INT32_NUM 	0
 #define UDB_RX_FP32_NUM 	0
 #define UDB_RX_TOTAL_SIZE  (((UDB_RX_BOOL_NUM + 7) / 8) + \
