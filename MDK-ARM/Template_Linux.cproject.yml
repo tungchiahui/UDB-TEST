@@ -69,10 +69,6 @@ project:
           misc:
             - CPP:
                 - -xc++
-        - file: ../Core/Src/dma.c
-          misc:
-            - CPP:
-                - -xc++
         - file: ../Core/Src/usart.c
           misc:
             - CPP:

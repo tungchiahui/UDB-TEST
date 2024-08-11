@@ -145,11 +145,6 @@ build:
           misc:
             CPP:
               - -xc++
-        - file: ../Core/Src/dma.c
-          category: sourceC
-          misc:
-            CPP:
-              - -xc++
         - file: ../Core/Src/usart.c
           category: sourceC
           misc:

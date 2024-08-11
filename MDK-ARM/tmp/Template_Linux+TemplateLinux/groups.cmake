@@ -29,7 +29,6 @@ set_source_files_properties("${SOLUTION_ROOT}/startup_stm32f103xb.s" PROPERTIES
 add_library(Group_Application_User_Core OBJECT
   "${SOLUTION_ROOT}/../Core/Src/main.c"
   "${SOLUTION_ROOT}/../Core/Src/gpio.c"
-  "${SOLUTION_ROOT}/../Core/Src/dma.c"
   "${SOLUTION_ROOT}/../Core/Src/usart.c"
   "${SOLUTION_ROOT}/../Core/Src/stm32f1xx_it.c"
   "${SOLUTION_ROOT}/../Core/Src/stm32f1xx_hal_msp.c"
@@ -48,9 +47,6 @@ target_link_libraries(Group_Application_User_Core PUBLIC
   ${CONTEXT}_ABSTRACTIONS
 )
 set_source_files_properties("${SOLUTION_ROOT}/../Core/Src/gpio.c" PROPERTIES
-  COMPILE_OPTIONS ""
-)
-set_source_files_properties("${SOLUTION_ROOT}/../Core/Src/dma.c" PROPERTIES
   COMPILE_OPTIONS ""
 )
 set_source_files_properties("${SOLUTION_ROOT}/../Core/Src/usart.c" PROPERTIES
