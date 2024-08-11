@@ -53,3 +53,6 @@
 276	372	7450527031468405	C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/out/Template_Linux/TemplateLinux/Template_Linux.axf	fc0258969be1c787
 25	105	7450542899643781	CMakeFiles/database	e0a10bb3adebf600
 25	105	7450542899643781	C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/tmp/1/CMakeFiles/database	e0a10bb3adebf600
+64	2259	7450543180354277	CMakeFiles/Group_Application_User_Core.dir/C_/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/Core/Src/usart.o	a4cd5b61670de655
+5	4668	7450543179711411	CMakeFiles/Group_Application_MDK-ARM.dir/C_/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/startup_stm32f103xb.o	e964fdb9e69ea63f
+4668	4783	7450543226385475	C:/UserFolder/XiaomiCloud/Work/Source/GitHub/UDB-TEST/MDK-ARM/out/Template_Linux/TemplateLinux/Template_Linux.axf	fc0258969be1c787
