@@ -79,6 +79,10 @@ Section Cross References
     stm32f1xx_it.o(.text.USART1_IRQHandler) refers to stm32f1xx_hal_uart.o(.text.HAL_UART_IRQHandler) for HAL_UART_IRQHandler
     stm32f1xx_it.o(.ARM.exidx.text.USART1_IRQHandler) refers to stm32f1xx_it.o(.text.USART1_IRQHandler) for [Anonymous Symbol]
     stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_MspInit) refers to stm32f1xx_hal_msp.o(.text.HAL_MspInit) for [Anonymous Symbol]
+    startup_main.o(.text.startup_main) refers to usart.o(.bss.huart1) for huart1
+    startup_main.o(.text.startup_main) refers to udb.o(.bss.rx_buffer) for rx_buffer
+    startup_main.o(.text.startup_main) refers to stm32f1xx_hal_uart.o(.text.HAL_UART_Receive_DMA) for HAL_UART_Receive_DMA
+    startup_main.o(.ARM.exidx.text.startup_main) refers to Unwind-EHABI.cpp.o(.text.__aeabi_unwind_cpp_pr0) for __aeabi_unwind_cpp_pr0
     startup_main.o(.ARM.exidx.text.startup_main) refers to startup_main.o(.text.startup_main) for [Anonymous Symbol]
     stm32f1xx_hal_gpio_ex.o(.ARM.exidx.text.HAL_GPIOEx_ConfigEventout) refers to stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_ConfigEventout) for [Anonymous Symbol]
     stm32f1xx_hal_gpio_ex.o(.ARM.exidx.text.HAL_GPIOEx_EnableEventout) refers to stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_EnableEventout) for [Anonymous Symbol]
@@ -781,7 +785,7 @@ Removing Unused input sections from the image.
     Removing stm32f1xx_hal_msp.o(.text), (0 bytes).
     Removing stm32f1xx_hal_msp.o(.ARM.exidx.text.HAL_MspInit), (8 bytes).
     Removing startup_main.o(.text), (0 bytes).
-    Removing startup_main.o(.text.startup_main), (0 bytes).
+    Removing startup_main.o(.text.startup_main), (24 bytes).
     Removing startup_main.o(.ARM.exidx.text.startup_main), (8 bytes).
     Removing stm32f1xx_hal_gpio_ex.o(.text), (0 bytes).
     Removing stm32f1xx_hal_gpio_ex.o(.text.HAL_GPIOEx_ConfigEventout), (20 bytes).
@@ -1295,7 +1299,7 @@ Removing Unused input sections from the image.
     Removing libunwind.cpp.o(.ARM.exidx.text._ZN9libunwind13Registers_arm15getRegisterNameEi), (8 bytes).
     Removing libunwind.cpp.o(.rodata._ZTVN9libunwind12UnwindCursorINS_17LocalAddressSpaceENS_13Registers_armEEE), (72 bytes).
 
-544 unused section(s) (total 19993 bytes) removed from the image.
+544 unused section(s) (total 20017 bytes) removed from the image.
 
 ==============================================================================
 
